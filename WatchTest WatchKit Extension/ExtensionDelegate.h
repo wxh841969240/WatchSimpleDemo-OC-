@@ -8,6 +8,12 @@
 
 #import <WatchKit/WatchKit.h>
 
+#define ComplicationCurrentEntry    @"ComplicationCurrentEntry"
+#define ComplicationShortTextData   @"ComplicationShortTextData"
+#define ComplicationTextData        @"ComplicationTextData"
+
 @interface ExtensionDelegate : NSObject <WKExtensionDelegate>
+
+@property (nonatomic, strong) NSMutableDictionary * myComplicationData;
 
 @end

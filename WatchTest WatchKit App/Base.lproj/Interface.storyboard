@@ -1,16 +1,639 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6724" systemVersion="14A389" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11129.15" systemVersion="15F34" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3735"/>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11103.10"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11055.6"/>
     </dependencies>
     <scenes>
+        <!--帧动画-->
+        <scene sceneID="ZfN-lP-gtY">
+            <objects>
+                <controller identifier="FPSTrialInterfaceController" title="帧动画" id="acY-ki-Qtl" customClass="FPSTrialInterfaceController">
+                    <items>
+                        <imageView width="100" height="100" alignment="center" id="F1o-gg-V1j"/>
+                        <group width="1" alignment="left" id="umg-mJ-ZyV">
+                            <items>
+                                <button width="0.33000000000000002" alignment="left" title="36" id="bAs-YJ-TU9">
+                                    <connections>
+                                        <action selector="thirtySixFPS" destination="acY-ki-Qtl" id="AbO-ab-LD1"/>
+                                    </connections>
+                                </button>
+                                <button width="0.33000000000000002" alignment="left" title="24" id="qH2-re-iwP">
+                                    <connections>
+                                        <action selector="twentyFourFPS" destination="acY-ki-Qtl" id="F1T-gc-fEh"/>
+                                    </connections>
+                                </button>
+                                <button width="0.33000000000000002" alignment="left" title="12" id="voB-b3-tX0">
+                                    <connections>
+                                        <action selector="twelveFPS" destination="acY-ki-Qtl" id="2k9-AR-e3a"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="progressImage" destination="F1o-gg-V1j" id="CCa-n1-PLa"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="79"/>
+        </scene>
+        <!--表冠-->
+        <scene sceneID="zNv-VV-cQf">
+            <objects>
+                <controller identifier="CrownInterfaceController" title="表冠" id="yaS-Sa-D5E" customClass="CrownInterfaceController">
+                    <items>
+                        <imageView width="100" height="100" alignment="center" image="progress-0" id="967-aJ-otE"/>
+                        <button width="1" alignment="left" title="Focus" id="Um0-lJ-LDK">
+                            <connections>
+                                <action selector="foucesAction" destination="yaS-Sa-D5E" id="Y6e-Sm-9hG"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="progressImage" destination="967-aJ-otE" id="vER-Pz-4L2"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="415" y="80"/>
+        </scene>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider=""/>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController">
+                    <items>
+                        <table alignment="left" pagingScroll="YES" id="SRt-Nv-dEn">
+                            <items>
+                                <tableRow identifier="WBTestRow" id="3oW-HY-9EZ" customClass="WBTestRow">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" spacing="5" id="51S-mk-RbU">
+                                        <items>
+                                            <label alignment="left" text="title" id="qwz-Od-0Wc">
+                                                <fontDescription key="font" type="boldSystem" pointSize="20"/>
+                                            </label>
+                                            <label alignment="left" text="desc" numberOfLines="0" id="PXI-Fc-PsC"/>
+                                        </items>
+                                        <edgeInsets key="margins" left="5" right="5" top="5" bottom="5"/>
+                                    </group>
+                                    <connections>
+                                        <outlet property="descLabel" destination="PXI-Fc-PsC" id="vCY-r9-37V"/>
+                                        <outlet property="titleLabel" destination="qwz-Od-0Wc" id="3xr-mr-era"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="SRt-Nv-dEn" id="UiC-T7-MeD"/>
+                    </connections>
+                </controller>
             </objects>
             <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--心率-->
+        <scene sceneID="1wz-6g-QMQ">
+            <objects>
+                <controller identifier="HeartRateInterfaceController" title="心率" id="KfW-bM-Y4E" customClass="HeartRateInterfaceController">
+                    <items>
+                        <group width="1" alignment="left" layout="vertical" id="7Uq-h1-2kg">
+                            <items>
+                                <imageView alignment="left" image="heart" id="U1m-zv-fTM"/>
+                                <group width="1" alignment="left" id="DMG-S2-SHS">
+                                    <items>
+                                        <label alignment="left" text="---" textAlignment="left" minimumScaleFactor="0.29999999999999999" id="vi2-jC-ue0">
+                                            <fontDescription key="font" type="system" pointSize="40"/>
+                                        </label>
+                                        <label alignment="left" text="BPM" id="RUO-o9-iey">
+                                            <color key="textColor" red="0.8613288402557373" green="0.058584794402122498" blue="0.11313973367214203" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                        </label>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
+                        <button width="1" alignment="left" title="Start" id="P8d-de-N3F">
+                            <connections>
+                                <action selector="action" destination="KfW-bM-Y4E" id="V3J-du-5pE"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="actionButton" destination="P8d-de-N3F" id="HHn-y8-cne"/>
+                        <outlet property="label" destination="vi2-jC-ue0" id="DNf-vB-iW2"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="415" y="622"/>
+        </scene>
+        <!--颜色渐变效果-->
+        <scene sceneID="5am-i4-CvN">
+            <objects>
+                <controller identifier="GradationInterfaceController" title="颜色渐变效果" id="l1Y-0d-YQs" customClass="GradationInterfaceController">
+                    <items>
+                        <imageView width="100" height="100" alignment="center" verticalAlignment="center" id="d3o-Du-7dC"/>
+                        <group width="1" alignment="left" verticalAlignment="bottom" id="BnC-qd-NNY">
+                            <items>
+                                <button width="0.5" alignment="left" title="线性" id="Kba-eW-gRF">
+                                    <connections>
+                                        <action selector="linearBtnTapped:" destination="l1Y-0d-YQs" id="duc-wE-h0Q"/>
+                                    </connections>
+                                </button>
+                                <button width="0.5" alignment="left" title="放射" id="Msi-C5-tUz">
+                                    <connections>
+                                        <action selector="radialBtnTapped:" destination="l1Y-0d-YQs" id="5l1-9K-pNg"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="image" destination="d3o-Du-7dC" id="af9-W9-3TN"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="610" y="622"/>
+        </scene>
+        <!--绘制路径-->
+        <scene sceneID="B9W-db-6rE">
+            <objects>
+                <controller identifier="DrawPathsInterfaceController" title="绘制路径" id="PAO-es-kBl" customClass="DrawPathsInterfaceController">
+                    <items>
+                        <imageView width="100" height="100" alignment="center" verticalAlignment="center" id="Db5-Tn-sdm"/>
+                        <group width="1" alignment="left" verticalAlignment="bottom" id="78v-IP-VwB">
+                            <items>
+                                <button width="0.33000000000000002" alignment="left" title="划线" id="7Az-Cb-V3f">
+                                    <connections>
+                                        <action selector="strokeAction" destination="PAO-es-kBl" id="NgU-jC-qzC"/>
+                                    </connections>
+                                </button>
+                                <button width="0.33000000000000002" alignment="left" title="贝塞尔" id="xS6-Ed-vEc">
+                                    <fontDescription key="font" type="system" pointSize="11"/>
+                                    <connections>
+                                        <action selector="bezerAction" destination="PAO-es-kBl" id="JxD-uA-62z"/>
+                                    </connections>
+                                </button>
+                                <button width="0.33000000000000002" alignment="left" title="SVG" id="rXd-JH-qKR">
+                                    <connections>
+                                        <action selector="svgAction" destination="PAO-es-kBl" id="76r-7W-T3a"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="contextImage" destination="Db5-Tn-sdm" id="2Ce-ER-4Pu"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="622"/>
+        </scene>
+        <!--Picker样式-->
+        <scene sceneID="uZm-9U-Kwn">
+            <objects>
+                <controller identifier="PickerStylesInterfaceController" title="Picker样式" id="vMQ-Xa-YtX" customClass="PickerStylesInterfaceController">
+                    <items>
+                        <label alignment="left" text="List" id="MAL-Fu-v0z"/>
+                        <picker height="100" alignment="left" focusStyle="sequence" id="7r5-ez-8dY"/>
+                        <label alignment="left" text="Stack" id="1mx-li-W6e"/>
+                        <picker height="100" alignment="left" style="stack" focusStyle="sequence" id="N7p-yG-Bg2"/>
+                        <label alignment="left" text="Sequence" id="iZs-fi-HXz"/>
+                        <picker height="100" alignment="left" style="sequence" focusStyle="sequence" id="YyQ-dY-SuJ"/>
+                    </items>
+                    <connections>
+                        <outlet property="listPicker" destination="7r5-ez-8dY" id="cxu-Fe-e9J"/>
+                        <outlet property="sequencePicker" destination="YyQ-dY-SuJ" id="fns-K6-1cw"/>
+                        <outlet property="stackPicker" destination="N7p-yG-Bg2" id="rQJ-hH-k5Q"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="803" y="458.75"/>
+        </scene>
+        <!--音频文件播放-->
+        <scene sceneID="Qig-u6-l8h">
+            <objects>
+                <controller identifier="AudioFilePlayerInterfaceController" title="音频文件播放" id="6wZ-Uq-l1q" customClass="AudioFilePlayerInterfaceController">
+                    <items>
+                        <button width="1" alignment="left" title="Play" id="ncq-kn-ifq">
+                            <connections>
+                                <action selector="playAction" destination="6wZ-Uq-l1q" id="6Hn-e9-dnz"/>
+                            </connections>
+                        </button>
+                        <label alignment="left" text="desc" numberOfLines="0" id="zMF-9l-F4r"/>
+                    </items>
+                    <connections>
+                        <outlet property="descLabel" destination="zMF-9l-F4r" id="yA1-H5-g2C"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="995" y="622"/>
+        </scene>
+        <!--提示框-->
+        <scene sceneID="vWV-Gv-W83">
+            <objects>
+                <controller identifier="AlertInterfaceController" title="提示框" id="mI2-Uc-Mhk" customClass="AlertInterfaceController">
+                    <items>
+                        <label alignment="center" text="tip" id="9bz-pq-INO"/>
+                        <button width="1" alignment="left" title="提示" id="opy-a6-S7e">
+                            <connections>
+                                <action selector="alert" destination="mI2-Uc-Mhk" id="T9w-ya-Ej1"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="并排按钮提示" id="kLH-OL-3Mp">
+                            <connections>
+                                <action selector="alertWithSideBySideButtons" destination="mI2-Uc-Mhk" id="x28-P8-J9w"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="ActionSheet" id="mge-34-ggO">
+                            <connections>
+                                <action selector="actionSheet" destination="mI2-Uc-Mhk" id="i1g-YT-Dxa"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="tipLabel" destination="9bz-pq-INO" id="Sn0-6B-Yhk"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1188" y="622"/>
+        </scene>
+        <!--数字表冠-->
+        <scene sceneID="6rb-UZ-ghT">
+            <objects>
+                <controller identifier="CoordinatedAnimationsInterfaceController" title="数字表冠" id="UA0-hf-keH" customClass="CoordinatedAnimationsInterfaceController">
+                    <items>
+                        <group width="120" height="120" alignment="center" verticalAlignment="center" backgroundImage="progress-0" id="mu6-5u-nqb">
+                            <items>
+                                <picker width="76" height="76" alignment="center" verticalAlignment="center" id="a3y-bN-Y6V">
+                                    <connections>
+                                        <action selector="scrollAction:" destination="UA0-hf-keH" id="t9c-Hc-Zfw"/>
+                                    </connections>
+                                </picker>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="picker" destination="a3y-bN-Y6V" id="bIf-Yk-Lpn"/>
+                        <outlet property="progressGroup" destination="mu6-5u-nqb" id="aNH-yw-Wap"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1382" y="622"/>
+        </scene>
+        <!--调起系统App-->
+        <scene sceneID="bUD-RA-z9z">
+            <objects>
+                <controller identifier="OpenSystemURLInterfaceController" title="调起系统App" id="MVe-7R-j71" customClass="OpenSystemURLInterfaceController">
+                    <items>
+                        <label alignment="left" text="Open" id="SER-1D-OKX"/>
+                        <group width="1" alignment="left" id="sOp-Ur-M7V">
+                            <items>
+                                <button width="0.5" alignment="left" title="电话" id="SDl-m2-TNN">
+                                    <connections>
+                                        <action selector="phoneAction" destination="MVe-7R-j71" id="Jpq-rZ-pqy"/>
+                                    </connections>
+                                </button>
+                                <button width="0.5" alignment="left" title="短信" id="RMi-fi-UZf">
+                                    <connections>
+                                        <action selector="smsAction" destination="MVe-7R-j71" id="U38-aa-PcK"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1577" y="622"/>
+        </scene>
+        <!--向手机发消息-->
+        <scene sceneID="BSI-PX-Av5">
+            <objects>
+                <controller identifier="MessageToPhoneInterfaceController" title="向手机发消息" id="7CU-3m-xg2" customClass="MessageToPhoneInterfaceController">
+                    <items>
+                        <picker height="100" alignment="left" id="cSz-Ps-VyB">
+                            <connections>
+                                <action selector="scrollAction:" destination="7CU-3m-xg2" id="s2E-BV-PLe"/>
+                            </connections>
+                        </picker>
+                        <button width="1" alignment="left" title="发送" id="2px-ay-wH7">
+                            <connections>
+                                <action selector="sendAction" destination="7CU-3m-xg2" id="ZUc-QR-SLe"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="messagePicker" destination="cSz-Ps-VyB" id="ezb-b5-aRo"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1774" y="622"/>
+        </scene>
+        <!--NSURLSession-->
+        <scene sceneID="qoi-Ia-QZB">
+            <objects>
+                <controller identifier="NSURLSessionInterfaceController" title="NSURLSession" id="a4i-DI-Kzd" customClass="NSURLSessionInterfaceController">
+                    <items>
+                        <group width="120" height="120" alignment="center" id="FFu-ys-mKP">
+                            <items>
+                                <imageView width="80" height="80" alignment="center" verticalAlignment="center" id="3Lx-Pu-lqZ"/>
+                            </items>
+                        </group>
+                        <button width="1" alignment="left" title="开始下载" id="4xw-Ay-LnH">
+                            <connections>
+                                <action selector="startAction" destination="a4i-DI-Kzd" id="lh2-dg-6Fh"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="contentImage" destination="3Lx-Pu-lqZ" id="spm-uJ-Ttp"/>
+                        <outlet property="progressGroup" destination="FFu-ys-mKP" id="oK0-lV-ig0"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1967" y="622"/>
+        </scene>
+        <!--触觉引擎-->
+        <scene sceneID="Bis-7h-T1D">
+            <objects>
+                <controller identifier="HapticInterfaceController" title="触觉引擎" id="O3e-RJ-Jr6" customClass="HapticInterfaceController">
+                    <items>
+                        <picker height="100" alignment="left" id="mZa-Zm-XVR">
+                            <connections>
+                                <action selector="didSelectedIndex:" destination="O3e-RJ-Jr6" id="arD-9i-Kpk"/>
+                            </connections>
+                        </picker>
+                        <button width="1" alignment="left" title="Play" id="0xO-t1-Okq">
+                            <connections>
+                                <action selector="playAction" destination="O3e-RJ-Jr6" id="Mi7-yw-GdX"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="hapticPicker" destination="mZa-Zm-XVR" id="srj-9S-hrM"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="995" y="345"/>
+        </scene>
+        <!--录音与播放-->
+        <scene sceneID="1gS-Dw-LHu">
+            <objects>
+                <controller identifier="AudioRecAndPlayInterfaceController" title="录音与播放" id="Jgb-ET-5Ch" customClass="AudioRecAndPlayInterfaceController">
+                    <items>
+                        <button width="1" alignment="left" title="录音" id="9M8-h7-zlW">
+                            <connections>
+                                <action selector="recordAction" destination="Jgb-ET-5Ch" id="AQv-lr-QnB"/>
+                            </connections>
+                        </button>
+                        <label alignment="left" text="desc" numberOfLines="0" id="UAV-hI-k92"/>
+                        <button width="1" alignment="left" title="播放" id="2Am-QP-pxB">
+                            <connections>
+                                <action selector="playAction" destination="Jgb-ET-5Ch" id="vxp-49-1Rm"/>
+                            </connections>
+                        </button>
+                        <label alignment="left" text="desc" numberOfLines="0" id="4k9-UO-ai9"/>
+                    </items>
+                    <connections>
+                        <outlet property="playLabel" destination="4k9-UO-ai9" id="aWd-Am-Chw"/>
+                        <outlet property="recLabel" destination="UAV-hI-k92" id="0zV-i8-Dwz"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1188" y="345"/>
+        </scene>
+        <!--加速计-->
+        <scene sceneID="FDJ-91-3Yz">
+            <objects>
+                <controller identifier="AccelerometerInterfaceController" title="加速计" id="wFW-wP-JQh" customClass="AccelerometerInterfaceController">
+                    <items>
+                        <group width="1" alignment="left" id="DSm-uD-ocZ">
+                            <items>
+                                <label alignment="left" text="x" id="LHb-bv-Z8B"/>
+                                <label alignment="right" text="Label" id="DOF-K7-18K"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="uKx-3A-LdE">
+                            <items>
+                                <label alignment="left" text="y" id="9dR-Bf-jj4"/>
+                                <label alignment="right" text="Label" id="DMC-oG-a0W"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="xG0-Ec-TVF">
+                            <items>
+                                <label alignment="left" text="z" id="iy4-wF-N66"/>
+                                <label alignment="right" text="Label" id="4Xq-50-CSI"/>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="x_label" destination="DOF-K7-18K" id="yaD-Bm-I3B"/>
+                        <outlet property="y_label" destination="DMC-oG-a0W" id="e0c-Sf-pVa"/>
+                        <outlet property="z_label" destination="4Xq-50-CSI" id="U6Z-bc-5BD"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1382" y="345"/>
+        </scene>
+        <!--陀螺仪-->
+        <scene sceneID="Bzm-gV-nyE">
+            <objects>
+                <controller identifier="GyroscopeInterfaceController" title="陀螺仪" id="ayC-gF-1th" customClass="GyroscopeInterfaceController">
+                    <items>
+                        <group width="1" alignment="left" id="LZf-fB-Ome">
+                            <items>
+                                <label alignment="left" text="x" id="SdN-hq-nrU"/>
+                                <label alignment="right" text="Label" id="KY3-Vs-KAo"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="26D-Eh-xFE">
+                            <items>
+                                <label alignment="left" text="y" id="QJb-jo-WBh"/>
+                                <label alignment="right" text="Label" id="ssV-BF-l5a"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="fzw-kT-bjb">
+                            <items>
+                                <label alignment="left" text="z" id="00x-wr-csk"/>
+                                <label alignment="right" text="Label" id="W4r-ea-M4m"/>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="x_label" destination="KY3-Vs-KAo" id="JDg-jx-LlJ"/>
+                        <outlet property="y_label" destination="ssV-BF-l5a" id="KRi-P7-sQy"/>
+                        <outlet property="z_label" destination="W4r-ea-M4m" id="ElM-MA-mm5"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1577" y="345"/>
+        </scene>
+        <!--设备动作-->
+        <scene sceneID="Gwe-OT-XCM">
+            <objects>
+                <controller identifier="DeviceMotionInterfaceController" title="设备动作" id="zyI-RQ-Xcg" customClass="DeviceMotionInterfaceController">
+                    <items>
+                        <group width="1" alignment="left" id="38g-KZ-WSr">
+                            <items>
+                                <label alignment="left" text="x_加速器" id="xJ7-gd-HTO"/>
+                                <label alignment="right" text="Label" id="cBj-XI-6af"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="3yj-Zd-889">
+                            <items>
+                                <label alignment="left" text="y_加速器" id="dbM-eS-dwY"/>
+                                <label alignment="right" text="Label" id="azH-tc-W0z"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="pfJ-RL-TCv">
+                            <items>
+                                <label alignment="left" text="z_加速器" id="c86-JS-E8d"/>
+                                <label alignment="right" text="Label" id="dDv-z9-CLT"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="F7d-k8-g1j">
+                            <items>
+                                <label alignment="left" text="x_陀螺仪" id="3OW-yO-L1g"/>
+                                <label alignment="right" text="Label" id="v2Q-lO-s2o"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="NTK-4Z-U5M">
+                            <items>
+                                <label alignment="left" text="y_陀螺仪" id="Wa4-VV-JLv"/>
+                                <label alignment="right" text="Label" id="LCH-jr-s3D"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="Hig-GQ-ne6">
+                            <items>
+                                <label alignment="left" text="z_陀螺仪" id="MgD-IV-mic"/>
+                                <label alignment="right" text="Label" id="SI2-MZ-n39"/>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="x_acc_label" destination="cBj-XI-6af" id="d7B-i9-oLd"/>
+                        <outlet property="x_gyr_label" destination="v2Q-lO-s2o" id="qj1-xj-Xwf"/>
+                        <outlet property="y_acc_label" destination="azH-tc-W0z" id="tLU-wj-Zo0"/>
+                        <outlet property="y_gyr_label" destination="LCH-jr-s3D" id="BQP-1i-LPs"/>
+                        <outlet property="z_acc_label" destination="dDv-z9-CLT" id="CHE-mn-Ob9"/>
+                        <outlet property="z_gyr_label" destination="SI2-MZ-n39" id="J3N-2q-cFk"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1774" y="345"/>
+        </scene>
+        <!--计步器-->
+        <scene sceneID="6BF-hc-qlb">
+            <objects>
+                <controller identifier="PedometerInterfaceController" title="计步器" id="O4u-Ru-IEC" customClass="PedometerInterfaceController">
+                    <items>
+                        <group width="1" alignment="left" id="4iy-en-QZj">
+                            <items>
+                                <label alignment="left" text="Steps" id="KE1-hl-ps5"/>
+                                <label alignment="right" text="0" id="XcM-xg-u93"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="uBf-fj-R6j">
+                            <items>
+                                <label alignment="left" text="Distance" id="V14-y5-6Kd"/>
+                                <label alignment="right" text="0" id="RrT-8u-j6E"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="wo4-Io-3LK">
+                            <items>
+                                <label alignment="left" text="Ascended" id="3j7-e7-rBd"/>
+                                <label alignment="right" text="0" id="IU4-Fw-sJu"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="Qph-en-YrC">
+                            <items>
+                                <label alignment="left" text="Descended" id="mao-Ad-qWQ"/>
+                                <label alignment="right" text="0" id="VP6-JP-E0f"/>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="ascendedLabel" destination="IU4-Fw-sJu" id="AeY-3z-owV"/>
+                        <outlet property="descendedLabel" destination="VP6-JP-E0f" id="pet-Nm-Zs1"/>
+                        <outlet property="distanceLabel" destination="RrT-8u-j6E" id="ewe-OS-vjA"/>
+                        <outlet property="stepsLabel" destination="XcM-xg-u93" id="Oae-zz-3Q8"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1967" y="345"/>
+        </scene>
+        <!--动画属性-->
+        <scene sceneID="PVd-Aa-Gdn">
+            <objects>
+                <controller identifier="AnimatedPropertiesInterfaceController" title="动画属性" id="0zf-79-Vmq" customClass="AnimatedPropertiesInterfaceController">
+                    <items>
+                        <imageView width="50" height="80" alignment="center" verticalAlignment="bottom" image="m4" contentMode="scaleAspectFit" id="5YA-IM-GAD"/>
+                        <group width="1" alignment="left" verticalAlignment="bottom" id="e8D-lt-s15">
+                            <items>
+                                <button width="0.33300000000000002" alignment="left" title="缩放" id="Zpq-4a-j1J">
+                                    <connections>
+                                        <action selector="scaleAction" destination="0zf-79-Vmq" id="NV7-1a-Apa"/>
+                                    </connections>
+                                </button>
+                                <button width="0.33000000000000002" alignment="left" title="透明" id="ZDL-QP-hE6">
+                                    <connections>
+                                        <action selector="alphaAction" destination="0zf-79-Vmq" id="z85-wZ-YcV"/>
+                                    </connections>
+                                </button>
+                                <button width="0.33000000000000002" alignment="left" title="移动" id="pVO-GM-Mty">
+                                    <connections>
+                                        <action selector="positionAction" destination="0zf-79-Vmq" id="hOc-5L-9HJ"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="zombie" destination="5YA-IM-GAD" id="QSv-4b-h6p"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="415" y="345"/>
+        </scene>
+        <!--Table动画-->
+        <scene sceneID="IJq-BZ-WEf">
+            <objects>
+                <controller identifier="TableAnimationInterfaceController" title="Table动画" id="46R-7A-rcm" customClass="TableAnimationInterfaceController">
+                    <items>
+                        <table alignment="left" id="g9b-i9-sQg">
+                            <items>
+                                <tableRow identifier="RowController" id="SNL-SD-brg" customClass="RowController">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" id="VkO-Ap-yvQ">
+                                        <items>
+                                            <label alignment="center" verticalAlignment="center" text="Label" id="90H-dq-Rga"/>
+                                        </items>
+                                        <edgeInsets key="margins" left="10" right="10" top="10" bottom="10"/>
+                                    </group>
+                                    <connections>
+                                        <outlet property="titleLabel" destination="90H-dq-Rga" id="JeB-Mo-tXC"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                        <group width="1" alignment="left" verticalAlignment="bottom" id="yMd-IB-8QP">
+                            <items>
+                                <button width="0.5" alignment="left" title="插入" id="165-ze-9de">
+                                    <connections>
+                                        <action selector="insertAction" destination="46R-7A-rcm" id="4XF-lS-tzf"/>
+                                    </connections>
+                                </button>
+                                <button width="0.5" alignment="left" title="删除" id="z6f-aW-Efc">
+                                    <connections>
+                                        <action selector="deleteAction" destination="46R-7A-rcm" id="FBK-Z4-ewC"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="g9b-i9-sQg" id="uA7-MV-U1K"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="610" y="345"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
@@ -26,14 +649,14 @@
                     </connections>
                 </notificationController>
             </objects>
-            <point key="canvasLocation" x="220" y="643"/>
+            <point key="canvasLocation" x="220" y="901"/>
         </scene>
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
             <objects>
-                <controller id="4sK-HA-Art" customClass="NotificationController" customModuleProvider=""/>
+                <controller id="4sK-HA-Art" customClass="NotificationController"/>
             </objects>
-            <point key="canvasLocation" x="468" y="643"/>
+            <point key="canvasLocation" x="484" y="901"/>
         </scene>
     </scenes>
 </document>

@@ -9,6 +9,8 @@
 #import <WatchKit/WatchKit.h>
 #import <Foundation/Foundation.h>
 
+#define kSnapeShotRefreshNotificationPath @"kSnapeShotRefreshNotificationPath"
+
 @interface InterfaceController : WKInterfaceController
 
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "WCManager.h"
 @interface AppDelegate ()
 
 @end
@@ -17,6 +17,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    WCManager * manager = [WCManager defaultManager];
+    [manager session];
+    
+    
+    
+    
     return YES;
 }
 
