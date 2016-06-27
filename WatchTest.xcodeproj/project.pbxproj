@@ -549,7 +549,8 @@
 				TargetAttributes = {
 					957A19241D17BB9F00A44457 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = EJA352Y795;
+						DevelopmentTeam = UJ49CWRL79;
+						DevelopmentTeamName = "晓晖 王 (Personal Team)";
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -569,7 +570,8 @@
 					};
 					957A19511D17BBA000A44457 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = EJA352Y795;
+						DevelopmentTeam = UJ49CWRL79;
+						DevelopmentTeamName = "晓晖 王 (Personal Team)";
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -578,7 +580,8 @@
 					};
 					957A19601D17BBA000A44457 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = EJA352Y795;
+						DevelopmentTeam = UJ49CWRL79;
+						DevelopmentTeamName = "晓晖 王 (Personal Team)";
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
