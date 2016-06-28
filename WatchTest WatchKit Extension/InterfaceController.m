@@ -38,7 +38,11 @@ static NSString * const kItemKeyClassPrefix = @"prefix";
 
 - (NSArray *)items{
     if (!_items) {
-        _items = @[@{kItemKeyTitle:@"表冠",
+        _items = @[
+                   @{kItemKeyTitle:@"SceneKit",
+                     kItemKeyDetail:@"SceneKit",
+                     kItemKeyClassPrefix:@"SceneKit"},
+                   @{kItemKeyTitle:@"表冠",
                      kItemKeyDetail:@"现在可以直接使用表冠来做交互",
                      kItemKeyClassPrefix:@"Crown"},
                    @{kItemKeyTitle:@"NSURLSession",

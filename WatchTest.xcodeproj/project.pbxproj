@@ -28,6 +28,7 @@
 		954D52D81D1A3436005F95CE /* GradationInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 954D52D71D1A3436005F95CE /* GradationInterfaceController.m */; };
 		954D52DB1D1A36AD005F95CE /* AudioFilePlayerInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 954D52DA1D1A36AD005F95CE /* AudioFilePlayerInterfaceController.m */; };
 		954D52DE1D1A3CF0005F95CE /* se_tap.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 954D52DD1D1A3CF0005F95CE /* se_tap.m4a */; };
+		954F66551D22485D000A1D11 /* SceneKitInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 954F66541D22485D000A1D11 /* SceneKitInterfaceController.m */; };
 		957A192A1D17BB9F00A44457 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 957A19291D17BB9F00A44457 /* main.m */; };
 		957A192D1D17BB9F00A44457 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 957A192C1D17BB9F00A44457 /* AppDelegate.m */; };
 		957A19301D17BB9F00A44457 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 957A192F1D17BB9F00A44457 /* ViewController.m */; };
@@ -154,6 +155,8 @@
 		954D52D91D1A36AD005F95CE /* AudioFilePlayerInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioFilePlayerInterfaceController.h; sourceTree = "<group>"; };
 		954D52DA1D1A36AD005F95CE /* AudioFilePlayerInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioFilePlayerInterfaceController.m; sourceTree = "<group>"; };
 		954D52DD1D1A3CF0005F95CE /* se_tap.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = se_tap.m4a; sourceTree = "<group>"; };
+		954F66531D22485D000A1D11 /* SceneKitInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneKitInterfaceController.h; sourceTree = "<group>"; };
+		954F66541D22485D000A1D11 /* SceneKitInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneKitInterfaceController.m; sourceTree = "<group>"; };
 		957A19251D17BB9F00A44457 /* WatchTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		957A19291D17BB9F00A44457 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		957A192B1D17BB9F00A44457 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -241,6 +244,8 @@
 		953A69DA1D18029C0089ABF0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				954F66531D22485D000A1D11 /* SceneKitInterfaceController.h */,
+				954F66541D22485D000A1D11 /* SceneKitInterfaceController.m */,
 				95100F711D1B972D00B15DB6 /* CrownInterfaceController.h */,
 				95100F721D1B972D00B15DB6 /* CrownInterfaceController.m */,
 				953A69E11D180AB20089ABF0 /* AnimatedPropertiesInterfaceController.h */,
@@ -549,8 +554,8 @@
 				TargetAttributes = {
 					957A19241D17BB9F00A44457 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = UJ49CWRL79;
-						DevelopmentTeamName = "晓晖 王 (Personal Team)";
+						DevelopmentTeam = EJA352Y795;
+						DevelopmentTeamName = "Beijing Chengshi Wanglin Information Technology Co., Ltd.";
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -570,8 +575,8 @@
 					};
 					957A19511D17BBA000A44457 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = UJ49CWRL79;
-						DevelopmentTeamName = "晓晖 王 (Personal Team)";
+						DevelopmentTeam = EJA352Y795;
+						DevelopmentTeamName = "Beijing Chengshi Wanglin Information Technology Co., Ltd.";
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -580,8 +585,8 @@
 					};
 					957A19601D17BBA000A44457 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = UJ49CWRL79;
-						DevelopmentTeamName = "晓晖 王 (Personal Team)";
+						DevelopmentTeam = EJA352Y795;
+						DevelopmentTeamName = "Beijing Chengshi Wanglin Information Technology Co., Ltd.";
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -715,6 +720,7 @@
 				957A19701D17BBA000A44457 /* NotificationController.m in Sources */,
 				953A69FE1D1930B00089ABF0 /* DeviceMotionInterfaceController.m in Sources */,
 				95A935751D1A90730090D71C /* OpenSystemURLInterfaceController.m in Sources */,
+				954F66551D22485D000A1D11 /* SceneKitInterfaceController.m in Sources */,
 				953A69E91D18E1C30089ABF0 /* RowController.m in Sources */,
 				953A6A071D193D6B0089ABF0 /* DrawPathsInterfaceController.m in Sources */,
 				953A69F81D19212B0089ABF0 /* AccelerometerInterfaceController.m in Sources */,

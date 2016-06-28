@@ -58,6 +58,44 @@
             </objects>
             <point key="canvasLocation" x="415" y="80"/>
         </scene>
+        <!--SenceKit-->
+        <scene sceneID="LMc-Gn-29L">
+            <objects>
+                <controller identifier="SceneKitInterfaceController" title="SenceKit" id="qQ0-l5-pX9" customClass="SceneKitInterfaceController">
+                    <items>
+                        <sceneKitScene height="0.69999999999999996" alignment="left" id="JS7-aP-kAx"/>
+                        <group width="1" height="0.29999999999999999" alignment="left" id="Gl0-YN-mK5">
+                            <items>
+                                <button width="0.25" alignment="left" verticalAlignment="center" title="光" id="NxB-fW-yTh">
+                                    <connections>
+                                        <action selector="firstAction" destination="qQ0-l5-pX9" id="jL3-3J-B0N"/>
+                                    </connections>
+                                </button>
+                                <button width="0.25" alignment="left" verticalAlignment="center" title="x" id="7Lr-it-YNJ">
+                                    <connections>
+                                        <action selector="secondAction" destination="qQ0-l5-pX9" id="z10-sd-nJJ"/>
+                                    </connections>
+                                </button>
+                                <button width="0.25" alignment="left" verticalAlignment="center" title="y" id="MW0-bI-F5M">
+                                    <connections>
+                                        <action selector="thirdAction" destination="qQ0-l5-pX9" id="4e3-6h-cZq"/>
+                                    </connections>
+                                </button>
+                                <button width="0.25" alignment="left" verticalAlignment="center" title="z" id="Xp4-rk-vZz">
+                                    <connections>
+                                        <action selector="fourthAction" destination="qQ0-l5-pX9" id="av6-g4-5L6"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="senceKitSence" destination="JS7-aP-kAx" id="D5u-zC-o2j"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="610" y="79"/>
+        </scene>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
